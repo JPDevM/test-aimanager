@@ -1,10 +1,12 @@
 // Dependencies
-import React from 'react';
+import React, { Fragment } from 'react';
 
 // Middlewares
 import ReactGA from 'react-ga';
 
 // Components
+import Header from '../partials/Header';
+import Footer from '../partials/Footer';
 import HeroSurvey from '../partials/HeroSurvey';
 import HeroVideo from '../partials/HeroVideo';
 import FeaturesSurvey from '../partials/FeaturesSurvey';
@@ -18,16 +20,20 @@ import Newsletter from '../partials/Newsletter';
 
 const Survey = () => {
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
-      {/*  Page content */}
-      <main className="flex-grow">
-        {/*  Page sections */}
-        <HeroSurvey />
-        <HeroVideo />
-        <FeaturesSurvey />
-        <Newsletter />
-      </main>
-    </div>
+    <Fragment>
+      <Header />
+      <div className="flex flex-col min-h-screen overflow-hidden">
+        {/*  Page content */}
+        <main className="flex-grow">
+          {/*  Page sections */}
+          <HeroSurvey />
+          <HeroVideo />
+          <FeaturesSurvey />
+          <Newsletter />
+        </main>
+      </div>
+      <Footer />
+    </Fragment>
   );
 };
 

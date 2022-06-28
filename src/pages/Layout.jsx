@@ -1,6 +1,6 @@
 // Dependencies
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+// import { Outlet } from 'react-router-dom';
 
 // Middlewares
 import ReactGA from "react-ga";
@@ -29,7 +29,18 @@ const Layout = () => {
       {/*  Page content */}
       <main className="flex-grow">
         {/*  Page sections */}
-        <Outlet />
+        <div className="flex flex-col min-h-screen overflow-hidden">
+          {/*  Page content */}
+          <main className="flex-grow">
+            {/*  Page sections */}
+            <HeroHome />
+            <FeaturesHome />
+            <FeaturesBlocks />
+            {/* <Testimonials /> */}
+            <Blog />
+            <Newsletter />
+          </main>
+        </div>
       </main>
 
       {/*  Site footer */}
