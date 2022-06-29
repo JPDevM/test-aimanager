@@ -1,6 +1,6 @@
 // Dependencies
 import React, { Fragment, useEffect } from 'react';
-import { Route, useLocation, Switch } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 // import 'dotenv/config';
 import ReactGA from 'react-ga';
 const TRACKING_ID = 'UA-225380906-1'; // Google Analytics Tracking ID
@@ -25,6 +25,7 @@ import TermsAndCond from './pages/termsAndCond';
 import Privacy from './pages/Privacy';
 import Forms from './pages/Forms';
 import NotFoundPage from './pages/NotFoundPage';
+
 
 // Styles
 import './css/style.scss';
@@ -52,25 +53,27 @@ function App() {
 
   return (
     <Fragment>
-      <Switch>
+      <Routes>
         {/* Landing */}
-        <Route exact path="/" component={Layout} />
-        <Route exact path="/signin" component={SignIn} />
-        <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/trial" component={Trial} />
-        <Route exact path="/aplications" component={Aplications} />
-        <Route exact path="/tools" component={Tools} />
-        <Route exact path="/backoffice" component={BackOffice} />
-        <Route exact path="/survey" component={Survey} />
-        <Route exact path="/reset-password" component={ResetPassword} />
-        <Route exact path="/term-and-cond" component={TermsAndCond} />
-        <Route exact path="/privacy" component={Privacy} />
-        {/* Main */}
-        <Route exact path="/forms" component={Forms} />
-        {/* 404 Last route */}
-        <Route path="/*" component={NotFoundPage} />
+        <Route exact path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route exact path="signin" element={<SignIn />} />
+          <Route exact path="signup" element={<SignUp />} />
+          <Route exact path="trial" element={<Trial />} />
+          <Route exact path="aplications" element={<Aplications />} />
+          <Route exact path="tools" element={<Tools />} />
+          <Route exact path="backoffice" element={<BackOffice />} />
+          <Route exact path="survey" element={<Survey />} />
+          <Route exact path="reset-password" element={<ResetPassword />} />
+          <Route exact path="term-and-cond" element={<TermsAndCond />} />
+          <Route exact path="privacy" element={<Privacy />} />
+          {/* Main */}
+          <Route exact path="forms" element={<Forms />} />
+          {/* 404 Last route */}
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
         {/* 404 rounte */}
-      </Switch>
+      </Routes>
     </Fragment>
   );
 }

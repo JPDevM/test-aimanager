@@ -1,6 +1,6 @@
 // Dependencies
 import React, { useEffect } from 'react';
-import { Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 // import 'dotenv/config';
 import ReactGA from 'react-ga';
 const TRACKING_ID = 'UA-225380906-1'; // Google Analytics Tracking ID
@@ -50,7 +50,7 @@ function App() {
 
   return (
     <>
-      <Switch>
+      <Routes>
         {/* Landing */}
         <Route exact path="/" element={<Home />} />
         <Route path="/signin" element={<SignIn />} />
@@ -65,7 +65,7 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         {/* Main */}
         <Route path="/forms" element={<Forms />} />
-      </Switch>
+      </Routes>
     </>
   );
 }

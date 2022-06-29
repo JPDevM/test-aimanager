@@ -43,7 +43,7 @@ const Tecnologies = () => {
 
         <div className="grid grid-cols-3 justify-items-center gap-8 py-10">
           {Logos.map((Logo, key) => (
-            <img className="" src={Logo} alt="imagen aplicación 1" key={key} />
+            <img className="" src={Logo} alt="imagen aplicación 1" />
           ))}
           <div className=""></div>
         </div>
